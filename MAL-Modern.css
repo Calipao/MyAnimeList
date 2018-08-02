@@ -125,7 +125,7 @@ tbody[class*="list-item"]:hover,
  }
 
 .list-table .list-table-header .header-title .link.sort {
-    color: #dddddd;
+    color: #ff0000;
 }
 
 .list-table .list-table-header .header-title .link.sort:hover {
