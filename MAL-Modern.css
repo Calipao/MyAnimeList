@@ -1,0 +1,133 @@
+/**
+    General Styles
+ */
+body {
+      background-color: #000000 !important;
+      background-image: url(https://i.imgur.com/xZuwLMq.png), url(https://i.imgur.com/msdzjtq.png), url(http://i.imgur.com/wrOXMUV.jpg);
+      background-position: left top, right top, center center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed;
+      background-size: auto, auto, cover;
+      margin: 0 0 0 0;
+      color: #CCCCCC !important;
+      text-align: center;
+      font-family: Verdana, Arial;
+      font-size: 11px;
+  }
+
+td {
+    line-height: 1.5em;
+}
+
+a {
+    color: #dddddd;
+    text-decoration: none;
+}
+
+/**
+ * List Container - List Table - Header
+ */
+.list-table .list-table-data .data {
+    height: 72px;
+    display: table-cell;
+    padding: 4px 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: #EBEBEB 1px solid
+    transition: ease 0.25s;
+}
+.list-table .list-table-data .data:hover {
+    height: 90px;
+    transition: ease 0.25s;
+}
+
+/*
+    Listing Style
+*/
+tbody[class*="list-item"]:hover,
+.list-table tbody:nth-of-type(2n+1):hover {
+    background-color:rgba(221, 221, 221, .5) !important;
+    transition: ease 0.25s;
+}
+
+.list-table > tbody:nth-of-type(2n+1),
+.list-table, .list-container,
+.list-table .list-table-header .header-title {
+    background-color: rgba(0, 0, 0, .7) !important;
+    border: 0 transparent solid !important;
+    transition: ease 0.25s;
+}
+
+/*
+    List Image
+*/
+.list-table .list-table-data .data.image .image {
+    width:48px;
+    height:68px;
+    margin-left:-24px;
+    margin-top:-34px;
+    border:1px solid #dddddd;
+    background-color:rgba(221, 221, 221, 0.7);
+    background-position:50% 50%;
+    background-size:cover;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:7px;
+    border-top-left-radius:7px;
+    border-top-right-radius:0px;
+    position: absolute;
+    transition: ease 0.25s;
+}
+
+.list-table .list-table-data .data.image .image:hover {
+    width:120px;
+    height:170px;
+    margin-left:-60px;
+    margin-top:-85px;
+    background-color:transparent;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:20px;
+    border-top-left-radius:20px;
+    border-top-right-radius:0px;
+    box-shadow:rgba(20, 20, 20, 0.55) 0 0 8px 8px;
+    z-index:1;
+    position: absolute;
+    transition: ease 0.25s;
+}
+
+/*
+    Image List Width
+*/
+.list-table .list-table-header .header-title.image {
+    width: 120px
+}
+
+/*
+    List Container
+ */
+ .list-container {
+     position: relative;
+     background-color: #ffffff;
+     border: #EBEBEB 1px solid;
+     width: 1068px;
+     margin-bottom: 0;
+     margin-right: auto;
+     margin-left: auto;
+     text-align: left;
+ }
+
+/*
+    List Headers
+*/
+ .list-table .list-table-header .header-title .link {
+     font-size: 11px;
+     color: #dddddd;
+     text-decoration: none
+ }
+
+.list-table .list-table-header .header-title .link.sort {
+    color: #dddddd;
+}
+
+.list-table .list-table-header .header-title .link.sort:hover {
+    color: #2556c6
+}
