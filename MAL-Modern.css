@@ -8,12 +8,15 @@
     --color-text-main:                  #DDDDDD;
     --color-text-headers:               #FFFFFF;
     --color-text-headers-hover:         #BBBBFF;
+
     --color-list-title:                 rgba(0, 0, 0, 0.8);
     --color-list-container:             rgba(0, 0, 0, 0.8);
+
     --color-list-oddrows:               rgba(50, 50, 50, 0.7);
     --color-list-oddrows-hover:         rgba(200, 200, 200, 0.7);
     --color-list-evenrows:              rgba(10, 10, 10, 0.7);
     --color-list-evenrows-hover:        rgba(200, 200, 200, 0.7);
+
     --color-list-status-watching:       #2db039;
     --color-list-status-plantowatch:    #c3c3c3;
     --color-list-status-completed:      #26448f;
@@ -24,7 +27,7 @@
     --img-character-left:               url(https://i.imgur.com/xZuwLMq.png);
     --img-character-right:              url(https://i.imgur.com/msdzjtq.png);
     --img-background:                   url(https://i.imgur.com/wrOXMUV.jpg);
-    --img-abient-effect:                url(https://i.imgur.com/yEGCKgk.gif);
+    --img-ambient-effect:               url();
 
     /*Transitions*/
     --transition-time:                  0.25s;
@@ -34,7 +37,7 @@
 /*General Body Style*/
 body {
       background-color: var(--color-bg-main);
-      background-image: var(--img-abient-effect), var(--img-character-left), var(--img-character-right), var(--img-background);
+      background-image: var(--img-ambient-effect), var(--img-character-left), var(--img-character-right), var(--img-background);
       background-position: center center, left top, right top, center center;
       background-repeat: repeat, no-repeat, no-repeat, no-repeat;
       background-attachment: fixed, fixed, fixed, fixed;
@@ -98,7 +101,7 @@ tr[class*="list-table-data"]:hover {
 .list-container {
     position: relative;
     background-color: var(--color-list-container) !important;
-    width: 1068px;
+    width: 1058px;
     margin-bottom: 0;
     margin-right: auto;
     margin-left: auto;
