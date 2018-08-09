@@ -17,5 +17,6 @@ For custom image and colors, the code needs to be changed.
 -- background-color: #ffffff
 
 -- background-image: url("Image url goes here")
+
 ```
 
