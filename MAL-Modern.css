@@ -1,89 +1,177 @@
-/**
-    General Styles
- */
-body {
-      background-color: #000000 !important;
-      background-image: url(https://i.imgur.com/xZuwLMq.png), url(https://i.imgur.com/msdzjtq.png), url(http://i.imgur.com/wrOXMUV.jpg);
-      background-position: left top, right top, center center;
-      background-repeat: no-repeat, no-repeat, no-repeat;
-      background-attachment: fixed, fixed, fixed;
-      background-size: auto, auto, cover;
-      margin: 0 0 0 0;
-      color: #CCCCCC !important;
-      text-align: center;
-      font-family: Verdana, Arial;
-      font-size: 11px;
-  }
+/*Customising Variables*/
+:root {
+    /*Fonts*/
+    --fontsize-main: 11px;
 
-td {
-    line-height: 1.5em;
+    /*Colors*/
+    --color-bg-main:                    #000000;
+    --color-text-main:                  #DDDDDD;
+    --color-text-headers:               #FFFFFF;
+    --color-text-headers-hover:         #BBBBFF;
+    --color-list-title:                 rgba(0, 0, 0, 0.8);
+    --color-list-container:             rgba(0, 0, 0, 0.8);
+    --color-list-oddrows:               rgba(50, 50, 50, 0.7);
+    --color-list-oddrows-hover:         rgba(200, 200, 200, 0.7);
+    --color-list-evenrows:              rgba(10, 10, 10, 0.7);
+    --color-list-evenrows-hover:        rgba(200, 200, 200, 0.7);
+    --color-list-status-watching:       #2db039;
+    --color-list-status-plantowatch:    #c3c3c3;
+    --color-list-status-completed:      #26448f;
+    --color-list-status-onhold:         #f1c83e;
+    --color-list-status-dropped:        #a12f31;
+
+    /*Images*/
+    --img-character-left:               url(https://i.imgur.com/xZuwLMq.png);
+    --img-character-right:              url(https://i.imgur.com/msdzjtq.png);
+    --img-background:                   url(https://i.imgur.com/wrOXMUV.jpg);
+    --img-abient-effect:                url(https://i.imgur.com/yEGCKgk.gif);
+
+    /*Transitions*/
+    --transition-time:                  0.25s;
+    --transition-type:                  ease;
 }
 
+/*General Body Style*/
+body {
+      background-color: var(--color-bg-main);
+      background-image: var(--img-abient-effect), var(--img-character-left), var(--img-character-right), var(--img-background);
+      background-position: center center, left top, right top, center center;
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed, fixed;
+      background-size: auto, auto, auto, cover;
+      margin: 0 0 0 0;
+      color: var(--color-text-main);
+      text-align: center;
+      font-family: Verdana, Arial;
+      font-size: var(--fontsize-main);
+}
+
+/*General Table Style*/
+th {
+
+}
+tbody {
+
+}
+tr {
+
+}
+td {
+      line-height: 1.5em;
+}
+
+/*General Text Style*/
 a {
-    color: #dddddd;
+    color: var(--color-text-main);
     text-decoration: none;
 }
 
-/**
- * List Container - List Table - Header
- */
-.list-table .list-table-data .data {
-    height: 72px;
-    display: table-cell;
-    padding: 4px 0;
-    text-align: center;
-    vertical-align: middle;
-    border-bottom: #EBEBEB 1px solid
-    transition: ease 0.25s;
+/*Animelist Table Rows*/
+tr[class*="list-table-data"] {
+    height: 80px;
+    transition: var(--transition-type) var(--transition-time);
 }
-.list-table .list-table-data .data:hover {
+tr[class*="list-table-data"]:hover {
     height: 90px;
-    transition: ease 0.25s;
+    transition: var(--transition-type) var(--transition-time);
 }
 
-/*
-    Listing Style
-*/
-tbody[class*="list-item"]:hover,
+/*Animelist Table Rows - ODD & EVEN*/
+.list-table tbody:nth-of-type(2n) {
+    background-color: var(--color-list-oddrows) !important;
+    transition: var(--transition-type) var(--transition-time);
+}
+.list-table tbody:nth-of-type(2n+1) {
+    background-color: var(--color-list-evenrows) !important;
+    transition: var(--transition-type) var(--transition-time);
+}
+.list-table tbody:nth-of-type(2n):hover {
+    background-color: var(--color-list-oddrows-hover) !important;
+    transition: var(--transition-type) var(--transition-time);
+}
 .list-table tbody:nth-of-type(2n+1):hover {
-    background-color:rgba(221, 221, 221, .5) !important;
-    transition: ease 0.25s;
+    background-color: var(--color-list-evenrows-hover) !important;
+    transition: var(--transition-type) var(--transition-time);
 }
 
-.list-table > tbody:nth-of-type(2n+1),
-.list-table, .list-container,
-.list-table .list-table-header .header-title {
-    background-color: rgba(0, 0, 0, .7) !important;
-    border: 0 transparent solid !important;
-    transition: ease 0.25s;
+/*Animelist container*/
+.list-container {
+    position: relative;
+    background-color: var(--color-list-container) !important;
+    width: 1068px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-/*
-    List Image
-*/
+/*Animelist header title*/
+th[class*="header-title"] {
+    background-color: var(--color-list-title) !important;
+}
+.list-table .list-table-header .header-title.status,
+.list-table .list-table-header .header-title.number,
+.list-table .list-table-header .header-title .image,
+.list-table .list-table-header .header-title .title,
+.list-table .list-table-header .header-title .score,
+.list-table .list-table-header .header-title .progress,
+.list-table .list-table-header .header-title .link,
+.list-table .list-table-header .header-title .link.sort {
+   color: var(--color-text-headers);
+   transition: var(--transition-type) var(--transition-time);
+}
+.list-table .list-table-header .header-title.status:hover,
+.list-table .list-table-header .header-title.number:hover,
+.list-table .list-table-header .header-title .image:hover,
+.list-table .list-table-header .header-title .title:hover,
+.list-table .list-table-header .header-title .score:hover,
+.list-table .list-table-header .header-title .progress:hover,
+.list-table .list-table-header .header-title .link:hover,
+.list-table .list-table-header .header-title .link.sort:hover {
+   color: var(--color-text-headers-hover);
+   transition: var(--transition-type) var(--transition-time);
+}
+
+/*Animelist status*/
+.list-table .list-table-data .data.status.reading,
+.list-table .list-table-data .data.status.watching {
+    background-color: var(--color-list-status-watching);
+}
+.list-table .list-table-data .data.status.plantoread,
+.list-table .list-table-data .data.status.plantowatch {
+    background-color: var(--color-list-status-plantowatch);
+}
+.list-table .list-table-data .data.status.completed {
+    background-color: var(--color-list-status-completed);
+}
+.list-table .list-table-data .data.status.onhold {
+    background-color: var(--color-list-status-onhold);
+}
+.list-table .list-table-data .data.status.dropped {
+    background-color: var(--color-list-status-dropped);
+}
+
+/*List Image*/
 .list-table .list-table-data .data.image .image {
     width:48px;
     height:68px;
     margin-left:-24px;
     margin-top:-34px;
     border:1px solid #dddddd;
-    background-color:rgba(221, 221, 221, 0.7);
     background-position:50% 50%;
     background-size:cover;
     border-bottom-left-radius:0px;
     border-bottom-right-radius:7px;
     border-top-left-radius:7px;
     border-top-right-radius:0px;
+    box-shadow:rgba(20, 20, 20, 0.55) 0 0 4px 4px;
     position: absolute;
-    transition: ease 0.25s;
+    transition: var(--transition-type) var(--transition-time);
 }
-
 .list-table .list-table-data .data.image .image:hover {
-    width:120px;
-    height:170px;
-    margin-left:-60px;
-    margin-top:-85px;
-    background-color:transparent;
+    width:96px;
+    height:136px;
+    margin-left:-48px;
+    margin-top:-68px;
     border-bottom-left-radius:0px;
     border-bottom-right-radius:20px;
     border-top-left-radius:20px;
@@ -91,43 +179,10 @@ tbody[class*="list-item"]:hover,
     box-shadow:rgba(20, 20, 20, 0.55) 0 0 8px 8px;
     z-index:1;
     position: absolute;
-    transition: ease 0.25s;
+    transition: var(--transition-type) var(--transition-time);
 }
 
-/*
-    Image List Width
-*/
+/*Image List Width*/
 .list-table .list-table-header .header-title.image {
     width: 120px
-}
-
-/*
-    List Container
- */
- .list-container {
-     position: relative;
-     background-color: #ffffff;
-     border: #EBEBEB 1px solid;
-     width: 1068px;
-     margin-bottom: 0;
-     margin-right: auto;
-     margin-left: auto;
-     text-align: left;
- }
-
-/*
-    List Headers
-*/
- .list-table .list-table-header .header-title .link {
-     font-size: 11px;
-     color: #dddddd;
-     text-decoration: none
- }
-
-.list-table .list-table-header .header-title .link.sort {
-    color: #dddddd;
-}
-
-.list-table .list-table-header .header-title .link.sort:hover {
-    color: #2556c6
 }
