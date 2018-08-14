@@ -389,7 +389,7 @@ timing of the animations. Lower or raise them to make the animations longer.
     position: fixed !important;
     top: 0 !important;
     width: 100% !Important;
-    z-index: 101;
+    z-index: -1;
     color: transparent;
     content: "";
     pointer-events: none;
@@ -407,7 +407,7 @@ timing of the animations. Lower or raise them to make the animations longer.
     left: 0 !important;
     pointer-events: none;
     opacity: 0;
-    z-index: 110 !Important;
+    z-index: -1 !Important;
     -moz-animation:mymove 5s; /* Firefox */
     -webkit-animation:mymove 5s; /* Safari and Chrome */
 }
@@ -417,7 +417,7 @@ timing of the animations. Lower or raise them to make the animations longer.
     width: 100%;
     right: 0 !important;
     top: 0 !important;
-    z-index: 110;
+    z-index: -1;
     pointer-events: none;
     opacity: 0;
     background-position: 100% 0;
