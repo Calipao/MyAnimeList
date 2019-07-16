@@ -1,6 +1,6 @@
 # MyAnimeList
 
-My custom modern style for MAL. See bellow the code you need to use.
+My custom modern style for MAL. See below the code you need to use.
 
 # Example
 My list [here](https://myanimelist.net/animelist/Calipao).
